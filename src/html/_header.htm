@@ -1,0 +1,91 @@
+<header data-scroll="120" data-scroll-show="20" data-scroll-show class="header">
+  <div class="header__container-big">
+    <div class="header__menu menu">
+      <nav class="menu__body">
+        <ul class="menu__list">
+          <li class="menu__item">
+            <a href="" data-goto=".page__main" class="menu__link nav-hover"
+              >Home</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              href=""
+              data-goto=".page__products-slider"
+              class="menu__link nav-hover"
+              >Products</a
+            >
+          </li>
+          <li class="menu__item">
+            <a href="" data-goto=".page__faq" class="menu__link nav-hover"
+              >FAQs</a
+            >
+          </li>
+          <li class="menu__item">
+            <a href="" data-goto=".footer" class="menu__link nav-hover"
+              >Contact Us</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="header__logo-box">
+      <a href="" data-goto=".page__main" class="header__logo">CBD</a>
+    </div>
+    <div class="header__actions">
+      <button
+        type="button"
+        data-da=".menu__body, 767,98"
+        data-popup="#popup-login"
+        class="header__button button nav-hover header__button-login"
+      >
+        Login
+      </button>
+
+      <button
+        id="search-btn"
+        type="button"
+        class="header__button button nav-hover"
+        data-goto=".page__products-slider"
+      >
+        <svg class="header__button-icon">
+          <use xlink:href="@img/icons/icons.svg#search"></use>
+        </svg>
+        <p>Search</p>
+      </button>
+      <form class="header__form-box form-box">
+        <input
+          autocomplete="off"
+          type="search"
+          name="form[]"
+          data-error="Помилка"
+          placeholder="Search product here..."
+          class="form-box__input"
+          id="search-input"
+        />
+        <button id="search-button" for="search-input" class="form-box__label">
+          <svg class="header__button-icon form-box__icon">
+            <use xlink:href="@img/icons/icons.svg#search"></use>
+          </svg>
+        </button>
+      </form>
+      <button
+        data-popup="#popup-cart"
+        type="button"
+        class="header__button button nav-hover"
+      >
+        <svg class="header__button-icon header__button-icon-cart">
+          <use xlink:href="@img/icons/icons.svg#cart">
+            <span class="for-counter"></span>
+          </use>
+        </svg>
+        <p>
+          Cart (<span data-da=".for-counter, 767,98" class="cart-counter"
+            >0</span
+          >)
+        </p>
+      </button>
+      <button type="button" class="menu__icon icon-menu"><span></span></button>
+    </div>
+  </div>
+</header>

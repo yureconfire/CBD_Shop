@@ -1,0 +1,483 @@
+//!GLOBAL Popup Styles====================================
+body::after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease 0s;
+  pointer-events: none;
+  z-index: 149;
+}
+.popup-show body::after {
+  opacity: 1;
+}
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 30px 10px;
+  transition: visibility 0.8s ease 0s;
+  visibility: hidden;
+  pointer-events: none;
+}
+.popup_show {
+  z-index: 150;
+  visibility: visible;
+  overflow: auto;
+  pointer-events: auto;
+}
+.popup_show .popup__content {
+  visibility: visible;
+  transform: scale(1);
+}
+.popup__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100%;
+  flex: 1 1 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.popup__content {
+  overflow: auto;
+  position: relative;
+  visibility: hidden;
+  transform: scale(0);
+  transition: transform 0.3s ease 0s;
+  background-color: #fff;
+  padding: 20px;
+  // width: 100%;
+  // max-width: 50%;
+  height: 100%;
+  // height: toRem(750);
+
+  border-radius: 10px;
+  .lock & {
+    visibility: visible;
+  }
+}
+
+//!Cart Popup Styles====================================
+.popup {
+  // .popup__content
+
+  &__content {
+    position: relative;
+  }
+
+  // .popup__text
+
+  &__text {
+    margin-bottom: toRem(20);
+    font-size: toRem(30);
+  }
+
+  // .popup__empty
+
+  &__empty {
+    display: inline-block;
+
+    padding: toRem(10);
+    border: 1px solid transparent;
+    color: #383d41;
+    background-color: #e2e3e5;
+    border-color: #d6d8db;
+    border-radius: toRem(0.25);
+    text-align: center;
+  }
+
+  // .popup__close
+
+  &__close {
+  }
+
+  // .popup__close-icon
+
+  &__close-icon {
+    position: absolute;
+    width: toRem(20);
+    height: toRem(20);
+    top: toRem(25);
+    right: toRem(10);
+  }
+}
+.cart-wrapper {
+}
+.cart-item {
+  display: flex;
+  // flex-wrap: wrap;
+  align-items: flex-start;
+  padding-top: toRem(35);
+  border-bottom: 1px solid rgba(43, 58, 4, 0.226);
+
+  &__image-ibg--contain {
+    @include adaptiveValue("padding", 80, 70);
+  }
+
+  // .cart-item__desc
+
+  &__desc {
+    padding-bottom: toRem(20);
+  }
+
+  // .cart-item__title
+
+  &__title {
+    font-size: toRem(18);
+    @include adaptiveValue("font-size", 18, 15);
+    letter-spacing: 2px;
+    margin-bottom: toRem(30);
+  }
+
+  // .cart-item__raiting
+
+  &__raiting {
+    @include adaptiveValue("margin-bottom", 50, 45);
+    @include adaptiveValue("font-size", 18, 16);
+    letter-spacing: 2px;
+  }
+
+  // .cart-item__details
+
+  &__details {
+    display: flex;
+    align-items: center;
+
+    gap: toRem(50);
+    @include adaptiveValue("gap", 50, 20);
+  }
+}
+.items {
+  // .items__control
+
+  &__control {
+  }
+
+  // .items__current
+
+  &__current {
+  }
+  &.items--small {
+    width: toRem(90);
+    height: toRem(26);
+    font-size: toRem(16);
+    text-align: center;
+    margin-top: toRem(0);
+    margin: 0 0;
+  }
+}
+
+.counter-wrapper {
+}
+.price {
+  letter-spacing: 5px;
+  @include adaptiveValue("letter-spacing", 5, 2);
+  @include adaptiveValue("font-size", 18, 14);
+  span {
+    color: green;
+  }
+}
+
+.order-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: toRem(20);
+
+  &__total {
+    letter-spacing: 2px;
+    font-size: toRem(20);
+
+    span {
+      color: rgb(80, 138, 5);
+    }
+  }
+
+  &__pay {
+  }
+
+  &__btn {
+    border-radius: toRem(8);
+    background-color: rgb(80, 138, 5);
+    padding: toRem(10) toRem(50);
+    color: #fff;
+    transition: all 0.3s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: rgb(51, 87, 4);
+      }
+    }
+  }
+}
+
+.hide {
+  display: none;
+}
+
+//!Login Popup Styles====================================
+.popup {
+  .toggle {
+    margin-top: toRem(20);
+    display: flex;
+    justify-content: center;
+    gap: toRem(10);
+
+    &__login {
+    }
+
+    &__signup {
+    }
+  }
+
+  &__wrapper {
+  }
+
+  &__content {
+  }
+
+  &__content-login {
+    padding: toRem(50) toRem(120);
+    @media (max-width: $mobile) {
+      padding: toRem(30) toRem(50);
+    }
+  }
+
+  &__close {
+  }
+
+  &__close-icon {
+  }
+
+  &__text {
+    letter-spacing: 8px;
+    font-size: toRem(40);
+  }
+
+  &__text-login {
+    text-align: center;
+    margin-bottom: toRem(70);
+  }
+}
+.login-wrapper {
+}
+.login {
+  &__form {
+  }
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: toRem(30);
+  &__input-name {
+    padding: toRem(20) toRem(20);
+    border: 2px solid rgb(35, 107, 8, 0.5);
+    border-radius: toRem(5);
+    &::placeholder {
+      font-size: toRem(16);
+      letter-spacing: 5px;
+    }
+  }
+
+  &__input-pass {
+    padding: toRem(20) toRem(20);
+    border-radius: toRem(5);
+    border: 2px solid rgb(35, 107, 8, 0.5);
+    border-radius: toRem(5);
+    &::placeholder {
+      font-size: toRem(16);
+      letter-spacing: 5px;
+    }
+  }
+  &__input-mail {
+    padding: toRem(20) toRem(20);
+    border-radius: toRem(5);
+    border: 2px solid rgb(35, 107, 8, 0.5);
+    border-radius: toRem(5);
+    &::placeholder {
+      font-size: toRem(16);
+      letter-spacing: 5px;
+    }
+  }
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    color: white;
+    padding: toRem(20) toRem(50);
+    background-color: rgb(61, 180, 17);
+    border-radius: toRem(5);
+    transition: all 0.3s;
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: rgb(33, 105, 7);
+      }
+    }
+  }
+  &__viewpass {
+    display: flex;
+    margin-top: toRem(15);
+    font-size: toRem(14);
+    transition: all 0.3s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: rgb(125, 125, 233);
+      }
+    }
+  }
+}
+
+.error .form__input-name {
+  border-color: red;
+}
+.error .form__input-pass {
+  border-color: red;
+}
+.error .form__input-mail {
+  border-color: red;
+}
+.error-label {
+  display: block;
+  margin-bottom: toRem(5);
+  font-size: toRem(14);
+  color: red;
+}
+
+.payment {
+  background: #f8f8f8;
+  max-width: 360px;
+  margin: 80px auto;
+  height: auto;
+  padding: 35px;
+  padding-top: 70px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.payment h2 {
+  text-align: center;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  color: #0d3c61;
+}
+
+.form .label {
+  display: block;
+  color: #555555;
+  margin-bottom: 6px;
+}
+
+.input {
+  padding: 13px 0px 13px 25px;
+  width: 100%;
+  text-align: center;
+  border: 2px solid #dddddd;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  word-spacing: 3px;
+  outline: none;
+  font-size: 16px;
+  color: #555555;
+}
+
+.card-grp {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-item {
+  width: 48%;
+}
+
+.space {
+  margin-bottom: 20px;
+}
+
+.icon-relative {
+  position: relative;
+}
+
+.icon-relative .fas,
+.icon-relative .far {
+  position: absolute;
+  bottom: 12px;
+  left: 15px;
+  font-size: 20px;
+  color: #555555;
+}
+.pay-title {
+  text-align: center;
+  font-size: toRem(24);
+  margin-bottom: toRem(50);
+}
+.btn {
+  margin-top: 40px;
+  background: rgb(33, 105, 7);
+  padding: 12px;
+  text-align: center;
+  color: #f8f8f8;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  @media (any-hover: hover) {
+    &:hover {
+      background: rgb(17, 58, 3);
+    }
+  }
+}
+
+.payment-logo {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  background: #f8f8f8;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  line-height: 85px;
+}
+
+.payment-logo:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 90px;
+  height: 90px;
+  background: #2196f3;
+  border-radius: 50%;
+}
+
+.payment-logo p {
+  position: relative;
+  color: #f8f8f8;
+  font-family: "Baloo Bhaijaan", cursive;
+  font-size: 58px;
+}
+
+@media screen and (max-width: 420px) {
+  .card-grp {
+    flex-direction: column;
+  }
+  .card-item {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .btn {
+    margin-top: 20px;
+  }
+}

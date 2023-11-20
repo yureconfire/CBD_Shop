@@ -1,0 +1,166 @@
+<!-- LOGIN POPUP -->
+<div id="popup-login" aria-hidden="true" class="popup">
+  <div class="popup__wrapper">
+    <div class="popup__content popup__content-login">
+      <button data-close type="button" class="popup__close">
+        <svg class="popup__close-icon">
+          <use xlink:href="@img/icons/icons.svg#close"></use>
+        </svg>
+      </button>
+      <div class="login-wrapper login">
+        <div class="popup__text popup__text-login">Login</div>
+        <form
+          data-popup-message="#form-message"
+          action="https://jsonplaceholder.typicode.com/posts"
+          class="login__form form"
+        >
+          <label
+            ><input
+              data-max-length="12"
+              data-min-length="6"
+              autocomplete="off"
+              type="text"
+              name="login"
+              placeholder="Name"
+              class="form__input-name"
+          /></label>
+          <label
+            ><input
+              data-min-length="12"
+              autocomplete="off"
+              type="password"
+              name="password"
+              placeholder="Password"
+              class="form__input-pass"
+            /><button class="form__viewpass" type="button">
+              Show Password
+            </button></label
+          >
+          <button class="form__button login-button" type="submit">Login</button>
+        </form>
+      </div>
+      <div class="login-wrapper sign-up hide">
+        <div class="popup__text popup__text-login">Sign Up</div>
+        <form class="sign-up__form form">
+          <label
+            ><input
+              data-max-length="12"
+              data-min-length="6"
+              autocomplete="off"
+              type="text"
+              name="login"
+              placeholder="Name"
+              class="form__input-name" /></label
+          ><label
+            ><input
+              data-required="email"
+              autocomplete="off"
+              type="email"
+              name="email"
+              placeholder="Email"
+              class="form__input-mail"
+          /></label>
+          <label
+            ><input
+              data-min-length="6"
+              autocomplete="off"
+              type="password"
+              name="password"
+              placeholder="Password"
+              class="form__input-pass"
+            /><button class="form__viewpass" type="button">
+              Show Password
+            </button></label
+          >
+
+          <button class="form__button signup-button" type="submit">
+            Sign Up
+          </button>
+        </form>
+      </div>
+      <div class="popup__toggle toggle">
+        <button class="toggle__login">Login</button>
+        <span>/</span>
+        <button class="toggle__signup">Sign Up</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- LOGIN POPUP -->
+
+<!-- CART POPUP -->
+<div id="popup-cart" aria-hidden="true" class="popup">
+  <div class="popup__wrapper">
+    <div class="popup__content">
+      <div class="popup__text">Your Order</div>
+      <div data-cart-empty class="popup__empty">Your cart is empty</div>
+      <div class="cart-wrapper"></div>
+      <div id="order-form" class="order-form hide">
+        <div class="order-form__total">
+          Total : <span class="total-price">0</span><span>$</span>
+        </div>
+        <div class="order-form__pay">
+          <button
+            data-popup="#popup-payment"
+            type="button"
+            class="order-form__btn"
+          >
+            Pay
+          </button>
+        </div>
+      </div>
+      <button data-close type="button" class="popup__close">
+        <svg class="popup__close-icon">
+          <use xlink:href="@img/icons/icons.svg#close"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+<!-- CART POPUP -->
+
+<!-- PAYMENT POPUP -->
+<div id="popup-payment" aria-hidden="true" class="popup">
+  <div class="popup__wrapper">
+    <div class="popup__content">
+      <h2 class="pay-title">Payment Gateway</h2>
+      <div class="form">
+        <div class="card space icon-relative">
+          <label class="label">Card holder:</label>
+          <input type="text" class="input" placeholder="Coding Market">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="card space icon-relative">
+          <label class="label">Card number:</label>
+          <input type="text" class="input" data-mask="0000 0000 0000 0000" placeholder="Card Number">
+          <i class="far fa-credit-card"></i>
+        </div>
+        <div class="card-grp space">
+          <div class="card-item icon-relative">
+            <label class="label">Expiry date:</label>
+            <input type="text" name="expiry-data" class="input"  placeholder="00 / 00">
+            <i class="far fa-calendar-alt"></i>
+          </div>
+          <div class="card-item icon-relative">
+            <label class="label">CVC:</label>
+            <input type="text" class="input" data-mask="000" placeholder="000">
+            <i class="fas fa-lock"></i>
+          </div>
+        </div>
+          
+        <div class="btn">
+          Pay 
+        </div> 
+        
+      </div>
+    </div>
+  </div>
+      <button data-close type="button" class="popup__close">
+        <svg class="popup__close-icon">
+          <use xlink:href="@img/icons/icons.svg#close"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+<!-- PAYMENT POPUP -->

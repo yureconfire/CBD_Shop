@@ -1,0 +1,101 @@
+// Базові стилі спойлерів
+.page {
+  // .page__faq
+
+  &__faq {
+  }
+}
+.faq-section {
+  @include adaptiveValue("margin-bottom", 150, 70);
+  // .faq-section__container
+
+  &__container {
+  }
+  &__title {
+    @include adaptiveValue("margin-top", 150, 50);
+
+    text-align: center;
+    text-transform: uppercase;
+    text-align: center;
+    @include adaptiveValue("padding-bottom", 50, 40);
+    @include adaptiveValue("font-size", 30, 24);
+
+    @include adaptiveValue("letter-spacing", 6, 3);
+  }
+  // .faq-section__spollers
+
+  &__spollers {
+    display: grid;
+    max-width: toRem(570);
+    margin: 0 auto;
+  }
+}
+.spollers {
+  // .spollers__item
+
+  &__item {
+    border-bottom: toRem(2) solid #eaedde;
+    &:first-child {
+      border-top: toRem(2) solid #eaedde;
+    }
+  }
+
+  // .spollers__title
+
+  &__title {
+    width: 100%;
+    cursor: default;
+    color: rgb(110, 119, 74);
+
+    padding: toRem(30) toRem(25);
+    @include adaptiveValue("padding-top", 30, 15);
+    @include adaptiveValue("padding-bottom", 30, 15);
+    position: relative;
+    list-style: none;
+    @include adaptiveValue("letter-spacing", 5, 3);
+    @include adaptiveValue("font-size", 18, 16);
+    &::marker {
+    }
+    ._spoller-init & {
+      cursor: pointer;
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        background-color: #000;
+        height: 2px;
+        width: 15px;
+        transition: transform 0.5s ease 0s;
+      }
+      &::before {
+        @media (any-hover: hover) {
+          &:hover {
+            background-color: yellow;
+          }
+        }
+        transform: translate(-75%, -50%) rotate(40deg);
+      }
+      &::after {
+        transform: translate(0, -50%) rotate(-40deg);
+      }
+      &._spoller-active {
+        &::before {
+          transform: translateX(-75%) rotate(-40deg);
+        }
+        &::after {
+          transform: rotate(40deg);
+        }
+      }
+    }
+  }
+  &__body {
+    padding: toRem(10) toRem(20);
+    letter-spacing: 0.72px;
+    line-height: 1.3;
+    @media (max-width: $mobile) {
+      font-size: toRem(16);
+    }
+  }
+}

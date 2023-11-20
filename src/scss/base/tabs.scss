@@ -1,0 +1,128 @@
+.tabs {
+  margin-bottom: toRem(100);
+  @include adaptiveValue("margin-bottom", 100, 30);
+  @media (max-width: $mobile) {
+    margin-bottom: toRem(30);
+  }
+  // .tabs__navigation
+  &__navigation {
+    display: flex;
+    gap: toRem(110);
+
+    border-bottom: 3px solid #ced6af;
+    justify-content: center;
+    margin: 0 auto;
+    @include adaptiveValue("gap", 110, 20);
+  }
+  // .tabs__title
+  &__title {
+    font-size: toRem(30);
+    text-transform: uppercase;
+    letter-spacing: toRem(6);
+
+    transition: all 0.2s;
+    padding: toRem(10) toRem(15);
+    @include adaptiveValue("letter-spacing", 6, 1);
+    @include adaptiveValue("font-size", 30, 16);
+    @include adaptiveValue("padding-left", 10, 5);
+    @include adaptiveValue("padding-right", 10, 5);
+    @include adaptiveValue("padding-top", 15, 5);
+    @include adaptiveValue("padding-bottom", 15, 5);
+
+    &._tab-active {
+      border-top-left-radius: toRem(3);
+      border-top-right-radius: toRem(3);
+      background-color: #ced6af;
+    }
+  }
+  // .tabs__content
+
+  // .tabs__body
+  &__body {
+    margin-top: toRem(80);
+    @include adaptiveValue("margin-top", 80, 30, 1, 1170, 768);
+    @media (max-width: $mobile) {
+      margin-top: toRem(20);
+    }
+    &_box {
+      display: flex;
+      justify-content: space-evenly;
+      @media (max-width: $mobile) {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
+
+    &_title {
+      font-size: toRem(24);
+      text-transform: uppercase;
+      line-height: 1.6;
+      letter-spacing: toRem(4.8);
+      padding-left: toRem(10);
+      margin-bottom: toRem(50);
+      @include adaptiveValue("font-size", 24, 16);
+      @include adaptiveValue("margin-bottom", 50, 15);
+      @include adaptiveValue("line-height", 38.4, 20);
+    }
+    &_info {
+      max-width: toRem(430);
+      @include adaptiveValue("max-width", 430, 300);
+      @media (max-width: $mobile) {
+        flex-direction: row;
+        max-width: 95%;
+      }
+    }
+    &_images {
+      display: flex;
+      flex-direction: column;
+      gap: toRem(30);
+      @include adaptiveValue("gap", 30, 10);
+      @media (max-width: $mobile) {
+        flex-direction: row;
+        margin-top: toRem(10);
+        gap: toRem(5);
+      }
+      @media (max-width: $mobileSmall) {
+        display: none;
+      }
+
+      img {
+        width: toRem(570);
+        height: toRem(300);
+        padding-right: toRem(10);
+        padding-left: toRem(10);
+        @include adaptiveValue("width", 570, 355, 1, 1170, 768);
+        @include adaptiveValue("height", 300, 220, 1, 1170, 768);
+        @media (max-width: $mobile) {
+          @include adaptiveValue("width", 355, 215, 1, 768, 320);
+          @include adaptiveValue("height", 220, 80, 1, 768, 320);
+
+          padding-right: toRem(2);
+          padding-left: toRem(2);
+        }
+      }
+    }
+    p {
+      font-size: toRem(18);
+      letter-spacing: toRem(0.72);
+      color: rgb(95, 102, 63);
+      line-height: 2.2;
+      display: flex;
+      align-items: center;
+      padding-left: toRem(10);
+      @include adaptiveValue("line-height", 39.6, 27, 1, 1170, 768);
+      @include adaptiveValue("font-size", 18, 16, 1, 1170, 768);
+      &:not(:last-child) {
+        margin-bottom: toRem(65);
+        @include adaptiveValue("margin-bottom", 65, 15);
+      }
+      @media (max-width: $mobile) {
+        line-height: 1.8;
+        letter-spacing: toRem(1.2);
+        &:not(:last-child) {
+          margin-bottom: toRem(40);
+        }
+      }
+    }
+  }
+}
